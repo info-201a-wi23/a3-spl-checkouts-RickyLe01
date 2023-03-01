@@ -23,7 +23,7 @@ highest_ebook_checkout
 least_checked_out_jan <- data_df %>%
   filter(CheckoutMonth == 1) %>%
   summarize(min = min(Checkouts, na.rm = TRUE))
-least_checked_out_month
+least_checked_out_jan
 
 most_checked_out_jan <- data_df %>%
   filter(CheckoutMonth == 1) %>%

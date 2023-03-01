@@ -13,7 +13,7 @@ library_df <- read.csv("~/Desktop/Main", stringsAsFactors = FALSE)
 
 The data I chose to analyze was the items checked out at least 10 times a month from 2017-2023. Because I was curious to review over the data set based on ether years or what type of material it was.
 ### Summary Information
-```{r, echo = FALSE, warning = FALSE, message = FALSE, code = readLines("summary.R")}
+```{r, echo = FALSE, warning = FALSE, message = FALSE, code = readLines('summary.R')}
 ```
 I went and collected which year had the most checkouts, which was in 2020. For the highest number of checked out in 2017 was 988. And the most eBook's checked out in 2019 was 1047 eBooks. In the month of January the least amount that was checked out was 10, and for the most amount that was checked out was 2115.
 
@@ -49,15 +49,8 @@ In this graph I wanted to see the trend of eBooks that were checked out througho
 In this graph, I didn't realize songs were able to be checkedout from the library. Since we have apps like Apple Music and Spotify. I wanted to see the trend of Pop songs that have been checkedout from 2017-2023 as well.
 ### Your Choice
 
-The last chart is up to you. It could be a line plot, scatter plot, histogram, bar plot, stacked bar plot, and more. Here are some requirements to help guide your design:
 
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear legend title
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-``````{r, echo = FALSE, code = readLines("chart3_example.R")}
+```{r, echo = FALSE, code = readLines("chart3_example.R")}
 ```
 
-
+I wanted to see if people were still checking out the genre Fantasy still throught the Seattle Public Library. As you can tell from the graph it begins to dip down more as the years progress. 
