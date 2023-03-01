@@ -2,75 +2,51 @@
 title: "A3: SPL Library Checkouts"
 output: html_document
 ---
-add changes
 
+```{r message = FALSE, warning = FALSE, include = FALSE}
+library(dplyr)
+library(stringr)
+library(knitr)
+library_df <- read.csv("~/Desktop/Main", stringsAsFactors = FALSE)
+```
 ### Introduction
 
-An introduction of the data and a description of the trends/books/items you are choosing to analyze (and why!)
-
+The data I chose to analyze was the items checked out at least 10 times a month from 2017-2023. Because I was curious to review over the data set based on ether years or what type of material it was.
 ### Summary Information
-
-Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
-
-These will likely be calculated using your DPLYR skills, answering questions such as:
-
-- What is the average number of checkouts for each item?
-- What is the month or year with the most/least checkouts for a book that you're interested in?
-- What is the month or year with the most/least checkouts for ebooks?
-- How has the number of print book checkouts changed over time?
-
-Feel free to calculate and report values that you find relevant.
+```{r, echo = FALSE, warning = FALSE, message = FALSE, code = readLines("summary.R")}
+```
+I went and collected which year had the most checkouts, which was in 2020. For the highest number of checked out in 2017 was 988. And the most eBook's checked out in 2019 was 1047 eBooks. In the month of January the least amount that was checked out was 10, and for the most amount that was checked out was 2115.
 
 ### The Dataset
 
 - Who collected/published the data?  
+The Seattle Public Library are the people who published and provided the given data we have right now. They tend to update it monthly.
 - What are the parameters of the data (dates, number of checkouts, kinds of books, etc.)?
+The parameters are UsageClass, CheckoutType, MaterialType, CheckoutYear, CheckoutMonth, Checkouts, Title, Creator, Subjects, Publisher, PublicationYear.
 - How was the data collected or generated?  
-- Why was the data collected?  
+The data was collected through checkouts from the library. 
+- Why was the data collected? 
+To show and inform people about what certain books, songs, or movies that were checked out often through the Seattle Public Library. 
 - What, if any, ethical questions do you need to consider when working with this data?  
+Were the people who checked out these books or movies had any consent for their data being added to the set? Is there certain age restrictions that people who are younger have access to? 
 - What are possible limitations or problems with this data?   (at least 200 words)
+limitations I see throughout this data is how the months are labeled as the given number data and not in a String format. This can create an issue when it comes to manipulating the data for our graphs. Along with the titles which are all in String format. It would be difficult to find an average of what was checked out the most overall in terms of books or movies. I also see an issue on how the item was checked out. Since there's no digital copies that people can technically borrow, there's no reason for them to not try to copy the eBook or not. And the years range from 2017-2023, meaning between that range a whole pandemic was playing into a factor on the amount of items someone was able to checkout. I was also confused on the number of checkouts within that said month. There should be a category where they say when the item was returned or not as well. Or how many items were in stock in the library. Also the data is only updated monthly, so if we were doing this assignment before the end of the month and then were to turn it in after the beginning of the next month. The data would be very different, because it would be newly updated.
 
 
 ### First Trends Over Time Chart
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
 
-The first chart that you will create and include will show the trend over time of your variable/topic/interest. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- Show more than one, but fewer than ~10 trends
-  - For example, two books, or 5 different mediums
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear - legend title
-In your .Rmd file, make sure to describe why you included the chart, and what patterns emerged
-
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-``````{r, echo = FALSE, warning = FALSE, code = readLines("chart1_example.R")}
+```{r, echo = FALSE, warning = FALSE, code = readLines("chart1_example.R")}
 ```
 
+In this graph I wanted to see the trend of eBooks that were checked out throughout 2017 to 2023. Becasue I was curious to see if digital books were checked out duriong the Pandemic more than physical copies.
 ### Second Trends Over Time Chart
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
 
-The second chart that you will create and include will show another trend over time of your variable/topic/interest. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- Show more than one, but fewer than ~10 trends
-  - For example, two books, or 5 different mediums
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear - legend title
-In your .Rmd file, make sure to describe why you included the chart, and what patterns emerged
-
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-``````{r, echo = FALSE, code = readLines("chart2_example.R")}
+```{r, echo = FALSE, code = readLines("chart2_example.R")}
 ```
 
+In this graph, I didn't realize songs were able to be checkedout from the library. Since we have apps like Apple Music and Spotify. I wanted to see the trend of Pop songs that have been checkedout from 2017-2023 as well.
 ### Your Choice
 
 The last chart is up to you. It could be a line plot, scatter plot, histogram, bar plot, stacked bar plot, and more. Here are some requirements to help guide your design:
@@ -81,7 +57,7 @@ The last chart is up to you. It could be a line plot, scatter plot, histogram, b
 
 Here's an example of how to run an R script inside an RMarkdown file:
 
-``````{r, echo = FALSE, code = readLines("chart2_example.R")}
+``````{r, echo = FALSE, code = readLines("chart3_example.R")}
 ```
 
 
